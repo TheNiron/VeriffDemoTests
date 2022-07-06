@@ -1,5 +1,6 @@
 // create various custom commands and overwrite
 // existing commands.
+import '@testing-library/cypress/add-commands'
 
 Cypress.Commands.add('getIframeBody', () => {
     // get the iframe > document > body

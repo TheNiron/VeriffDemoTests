@@ -11,7 +11,7 @@ Prerequisites : Node.js 12 or 14 and above
 After tests are executed, report can be found in "reports/html/index.html"
 
 #### Run with cypress UI
- npx cypress run --browser chrome
+ npx cypress open
 
 
 html report : 

@@ -9,6 +9,7 @@ Prerequisites : Java, Maven
 
 ###### Reports :
 After tests are executed, report can be found in "target/cucumeber-html-reports/"
+
 sample report name : report-feature_apiTests-veriffFlow-configs-post-feature.html
 
 <img width="1721" alt="Screenshot 2022-07-06 at 11 37 14 PM" src="https://user-images.githubusercontent.com/32265029/177615085-aacdbfef-7816-4554-adb1-d0d3dce5f4e7.png">

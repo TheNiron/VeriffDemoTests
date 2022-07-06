@@ -8,8 +8,7 @@ module.exports = {
     env: {
       veriff_url: 'https://demo.saas-3.veriff.me',
     },
-    
+
   },
-  
-  
+
 }

@@ -30,5 +30,5 @@ After the tests are executed, a test report will be generated in the current dir
 note for MAC M1 users : Unfortunately, Cypress tests can't be run with docker on linux/arm64 systems yet. There's an open issue for this:  https://github.com/cypress-io/cypress-docker-images/issues/431
 
 html report : 
- <img width="1703" alt="Screenshot 2022-07-06 at 11 22 13 PM" src="https://user-images.githubusercontent.com/32265029/177615522-77d6ed01-8d40-4201-a683-99208adee31b.png">
+<img width="1724" alt="Screenshot 2022-07-08 at 5 12 48 PM" src="https://user-images.githubusercontent.com/32265029/177985795-2a10b3d8-ce5a-40aa-8dfd-c8f0a22c9ac8.png">
 

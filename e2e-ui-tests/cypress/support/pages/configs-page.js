@@ -60,6 +60,7 @@ export class ConfigsPage {
   }
 
   static submitConfigurations() {
+    cy.intercept('POST', Cypress.env(VERIF_URL)).as('session')
     cy.get(veriffMeButton).click();
   }
 

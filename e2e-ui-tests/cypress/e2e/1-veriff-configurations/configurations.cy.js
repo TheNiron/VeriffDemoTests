@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 import { ConfigsPage } from "../../support/pages/configs-page"
+import { SessionApi } from "../../support/apis/session-api"
 import { QrCodePage } from "../../support/pages/qr-code-page";
 import { REDIRECT, INCONTEXT, VERIF_URL } from '../../support/constants';
 import { CommonUtils } from "../../support/common-util";
@@ -18,6 +19,7 @@ describe('Test the Veriff demo flow with Configurations', () => {
   it('Validate Veriff flow with valid details for all fields and Incontext is selected', () => {
     ConfigsPage.fillConfigurations("Niron Rasanjana", "English", "Sri Lanka", "Passport", INCONTEXT);
     ConfigsPage.submitConfigurations();
+    SessionApi.verifySessionCreationResponseCode(200);
     QrCodePage.verifyQRcodeInContext();
     QrCodePage.exitVerification();
   })
@@ -25,6 +27,7 @@ describe('Test the Veriff demo flow with Configurations', () => {
   it('Validate Veriff flow with valid details for all fields and Redirect is selected', () => {
     ConfigsPage.fillConfigurations("Niron Rasanjana", "English", "Sri Lanka", "Passport", REDIRECT);
     ConfigsPage.submitConfigurations();
+    SessionApi.verifySessionCreationResponseCode(200);
     QrCodePage.verifyQRcodeWithRedirect();
     QrCodePage.exitVerification();
   })
@@ -104,6 +107,7 @@ describe('Test the Veriff demo flow with Configurations', () => {
     it('Validate configurations with different valid input data', function () {
       ConfigsPage.fillConfigurations(userInput.name, userInput.language, userInput.country, userInput.document, userInput.launchVia);
       ConfigsPage.submitConfigurations();
+      SessionApi.verifySessionCreationResponseCode(200);
       QrCodePage.verifyQRcodeCommon();
       QrCodePage.exitVerification();
     });
@@ -115,6 +119,7 @@ describe('Test the Veriff demo flow with Configurations', () => {
     it('Validate configurations with different document types entered', function () {
       ConfigsPage.fillConfigurations("Niron Rasanjana", "English", "Sri Lanka", documentTypes.document, REDIRECT);
       ConfigsPage.submitConfigurations();
+      SessionApi.verifySessionCreationResponseCode(200);
       QrCodePage.verifyQRcodeCommon();
       QrCodePage.exitVerification();
     });

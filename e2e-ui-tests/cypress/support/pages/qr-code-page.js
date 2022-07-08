@@ -10,7 +10,7 @@ export class QrCodePage {
     cy.getIframeBody()
       .find('h1').should('have.text', "Let's get you verified").click()
     cy.getIframeBody()
-      .find('h2').should('have.text', "Scan the QR code").click()
+      .find('h2').should('have.text', "Scan the QR code",{timeout: 10000}).click()
   }
 
   static verifyQRcodeWithRedirect() {

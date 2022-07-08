@@ -1,4 +1,4 @@
-## Run E2E UI tests
+## Run E2E UI tests in Local
 Prerequisites : Node.js 12 or 14 and above
  
 1. Clone repository to your local
@@ -13,6 +13,22 @@ After tests are executed, report can be found in "reports/html/index.html"
 #### Run with cypress UI
  npx cypress open
 
+## Run E2E UI tests in Docker
+If you have docker installed, you can just pull the image I have created and run tests with it. The docker will volume the results report at the end of tests to your local machine.
+
+1. Pull the docker image: ```docker pull rasanjana29/veriff-demo-ui-tests:1.0.0```
+2. Run the docker ```docker run -t -i -v ${PWD}/Veriff-ui-test-reports:/e2e-test/cypress/reports rasanjana29/veriff-demo-ui-tests:1.0.0 npx cypress run --browser chrome```
+
+In the above command you can also change the browser you want to run the tests in with headless mode. 
+Ex:
+* --browser firefox
+* --browser edge
+* --browser chromium
+
+After the tests are executed, a test report will be generated in the current directory of the terminal with name “Veriff-ui-test-reports/html/index.html”.
+
+note for MAC M1 users : Unfortunately, Cypress tests can't be run with docker on linux/arm64 systems yet. There's an open issue for this:  https://github.com/cypress-io/cypress-docker-images/issues/431
 
 html report : 
  <img width="1703" alt="Screenshot 2022-07-06 at 11 22 13 PM" src="https://user-images.githubusercontent.com/32265029/177615522-77d6ed01-8d40-4201-a683-99208adee31b.png">
+
